@@ -1,0 +1,8 @@
+import cv2
+import numpy as np
+image = cv2.imread("C:/Users/OM Construction Co/Pictures/Screenshots/Screenshot 2023-11-28 082617.png", cv2.IMREAD_GRAYSCALE)
+kernel = np.array([[1, 1, 1], [1, -8, 1], [1, 1, 1]], dtype=np.float32)
+boundary_image = cv2.filter2D(image, -1, kernel)
+cv2.imshow("Boundary Image", boundary_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
